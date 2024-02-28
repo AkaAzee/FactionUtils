@@ -1,0 +1,11 @@
+#Fichier de configuration de FactionUtils
+
+#Rayon de coordonnées minimum et maximum pour la commade /rtp
+rtp:
+  minRange: 2000
+  maxRange: 50000
+  
+
+rate:
+  #Le taux de drop du spawner si il est cassé par une pioche Silk Touch
+  spawner: 0.5

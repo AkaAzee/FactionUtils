@@ -1,0 +1,10 @@
+name: FactionUtils
+version: 1.0
+author: AkaAzee
+main: fr.akaazee.factionutils.FactionUtils
+
+commands:
+  furnace:
+  smelt:
+  repair:
+  rtp:
