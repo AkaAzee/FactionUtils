@@ -34,19 +34,20 @@ public class Commands implements CommandExecutor {
 			switch(cmd.getName().toLowerCase()) {
 			
 				case"furnace":
-				case"smelt":
-					ItemStack result = null;
-					Iterator<Recipe> iter = Bukkit.recipeIterator();
-					while(iter.hasNext()) {
-						Recipe recipe = iter.next();
-						if(recipe instanceof FurnaceRecipe) {
-							if(((FurnaceRecipe) recipe).getInput().isSimilar(player.getInventory().getItemInMainHand())){
-								
-								result = recipe.getResult();
-								result.setAmount(player.getInventory().getItemInMainHand().getAmount());
-
-								player.getInventory().setItemInMainHand(result);
-								break;
+					ItemStack[] items = player.getInventory().getContents();
+					for(int i = 0; i < items.length; i++) {
+						ItemStack result = null;
+						Iterator<Recipe> iter = Bukkit.recipeIterator();
+						while(iter.hasNext()) {
+							Recipe recipe = iter.next();
+							if(recipe instanceof FurnaceRecipe) {
+								if(((FurnaceRecipe) recipe).getInput().isSimilar(items[i])){
+									
+									result = recipe.getResult();
+									result.setAmount(items[i].getAmount());
+	
+									player.getInventory().setItem(i, result);
+								}
 							}
 						}
 					}

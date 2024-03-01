@@ -2,9 +2,18 @@ name: FactionUtils
 version: 1.0
 author: AkaAzee
 main: fr.akaazee.factionutils.FactionUtils
+api-version: 1.19
 
 commands:
   furnace:
-  smelt:
+    aliases:
+    - smelt
+    permission: factionutils.furnace
+    permission-message: Tu n'as pas la permission d'utiliser cette commande.
   repair:
+    permission: factionutils.repair
+    permission-message: Tu n'as pas la permission d'utiliser cette commande.
   rtp:
+    permission: factionutils.rtp.citoyen; factionutils.rtp.noble; factionutils.rtp.maitre
+    permission-message: You do not have permission to use this command.
+    
