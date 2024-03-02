@@ -9,3 +9,15 @@ rtp:
 rate:
   #Le taux de drop du spawner si il est cassé par une pioche Silk Touch
   spawner: 0.5
+
+
+cooldowns:
+  #cooldown pour la commande rtp (en fonction des permissions)(en secondes)
+  maitre: 60
+  noble: 300
+  citoyen: 6000
+  
+  #nombre d'utilisation des commandes par jour
+  smelt: 5
+  repair: 5
+  
