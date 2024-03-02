@@ -1,4 +1,4 @@
-package fr.akaazee.factionutils;
+package fr.akaazee.factionutils.listeners;
 
 import java.util.Random;
 
@@ -16,12 +16,12 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BlockStateMeta;
 
-public class FactionListener implements Listener{
+public class SpawnerListener implements Listener{
 
 	private double dropChance;
     private Random random = new Random();
 	
-	public FactionListener(FileConfiguration config) {
+	public SpawnerListener(FileConfiguration config) {
 		this.dropChance = 1-config.getConfigurationSection("rate").getDouble("spawner");
 		
 	}

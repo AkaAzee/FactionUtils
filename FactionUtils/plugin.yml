@@ -15,5 +15,5 @@ commands:
     permission-message: Tu n'as pas la permission d'utiliser cette commande.
   rtp:
     permission: factionutils.rtp.citoyen; factionutils.rtp.noble; factionutils.rtp.maitre
-    permission-message: You do not have permission to use this command.
+    permission-message: Tu n'as pas la permission d'utiliser cette commande.
     
