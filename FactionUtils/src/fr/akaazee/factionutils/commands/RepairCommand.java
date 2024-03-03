@@ -35,7 +35,7 @@ public class RepairCommand implements CommandExecutor {
 			}
 			if(!this.utilizations.containsKey(player.getUniqueId())) {
 				
-				this.utilizations.put(player.getUniqueId(), (short) config.getConfigurationSection("cooldowns").getInt("repair"));
+				this.utilizations.put(player.getUniqueId(), (short)(config.getConfigurationSection("cooldowns").getInt("repair")-1));
 				this.repair(player);
 				player.sendMessage("§cIl vous reste §l" + this.utilizations.get(player.getUniqueId()) + " utilisations§r§c de cette commande aujourd'hui");
 				
