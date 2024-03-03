@@ -15,8 +15,8 @@ public class FactionUtils extends JavaPlugin{
 		
 		saveDefaultConfig();
 		getCommand("rtp").setExecutor(new RtpCommand(getConfig()));
-		getCommand("furnace").setExecutor(new FurnaceCommand());
-		getCommand("repair").setExecutor(new RepairCommand());
+		getCommand("furnace").setExecutor(new FurnaceCommand(getConfig()));
+		getCommand("repair").setExecutor(new RepairCommand(getConfig()));
 		
 		getServer().getPluginManager().registerEvents(new SpawnerListener(getConfig()), this);
 

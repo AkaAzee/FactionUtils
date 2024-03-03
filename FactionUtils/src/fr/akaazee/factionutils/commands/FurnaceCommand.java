@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
@@ -18,10 +19,12 @@ public class FurnaceCommand implements CommandExecutor {
 	
 	private HashMap<UUID, Short> utilizations;
 	private LocalDate lastcheck;
+	private FileConfiguration config;
 	
-	public FurnaceCommand() {
+	public FurnaceCommand(FileConfiguration config) {
 		this.utilizations = new HashMap<UUID, Short>();
 		this.lastcheck = null;
+		this.config = config;
 	}
 	
 	@Override
@@ -35,9 +38,9 @@ public class FurnaceCommand implements CommandExecutor {
 		}
 		if(!this.utilizations.containsKey(player.getUniqueId())) {
 			
-			this.utilizations.put(player.getUniqueId(), (short) 4);
+			this.utilizations.put(player.getUniqueId(), (short) config.getConfigurationSection("cooldowns").getInt("smelt"));
 			this.furnace(items, player);
-			player.sendMessage("§cIl vous reste §l4 utilisations§r§c de cette commande aujourd'hui");
+			player.sendMessage("§cIl vous reste §l" + this.utilizations.get(player.getUniqueId()) + " utilisations§r§c de cette commande aujourd'hui");
 			
 		}else if (this.utilizations.get(player.getUniqueId()) > 0) {
 			
