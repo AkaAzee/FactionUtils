@@ -9,11 +9,11 @@ commands:
     aliases:
     - smelt
     permission: factionutils.furnace
-    permission-message: Tu n'as pas la permission d'utiliser cette commande.
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
   repair:
     permission: factionutils.repair
-    permission-message: Tu n'as pas la permission d'utiliser cette commande.
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
   rtp:
     permission: factionutils.rtp.citoyen; factionutils.rtp.noble; factionutils.rtp.maitre
-    permission-message: Tu n'as pas la permission d'utiliser cette commande.
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
     
