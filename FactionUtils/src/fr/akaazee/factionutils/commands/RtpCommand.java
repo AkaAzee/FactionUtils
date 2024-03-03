@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 
 public class RtpCommand implements CommandExecutor{
 	
+	
 	private Random r;
 	private FileConfiguration config;
 	private final HashMap<UUID, Long> cooldown;
